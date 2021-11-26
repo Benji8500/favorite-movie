@@ -1,0 +1,38 @@
+<main>
+  <form (ngSubmit)="updateMovie(postForm)" #postForm="ngForm">
+    <mat-card class="movie-card">
+      <mat-card-content>
+        <div>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Rating</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let score of scores" [value]="score.value">
+                {{score.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Add Comment</mat-label>
+            <textarea
+            matInput
+            ngModel
+            #input
+            cols="50"
+            rows="10"
+
+            name="comment"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" mat-raised-button>Save</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</main>
+
+

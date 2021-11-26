@@ -1,0 +1,21 @@
+.films{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+
+}
+.movie-card{
+  width: 300px;
+  margin: 1.5em 1em;
+
+}
+
+.movie-image{
+  max-height: 300px;
+  object-fit:cover;
+}
+
+.note{
+  margin: 1.5em 1.5em;
+
+}

@@ -1,0 +1,24 @@
+<main class="films">
+  <div class="note" *ngIf="movies.length<1">
+  <p>     You have no movies yet, go add some!
+  </p>
+  </div>
+  <div *ngFor="let movie of movies">
+    <mat-card class="movie-card">
+      <mat-card-header>
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-subtitle>{{movie.year}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="movie-image" [src]=movie.poster alt="Movie Poster">
+      <mat-card-content>
+        <h3>  Rating: {{movie.rating}}</h3>
+        <h3>Comment: {{movie.comment}}</h3>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button routerLink="/edit/{{movie._id}}">EDIT</a>
+        <button mat-button (click)="deleteFilm(movie)">DELETE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</main>
